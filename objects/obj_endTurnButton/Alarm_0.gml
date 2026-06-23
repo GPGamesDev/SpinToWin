@@ -1,0 +1,1 @@
+obj_wheel.currentState = WHEEL_STATE.PRESPIN;

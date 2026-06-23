@@ -1,0 +1,1 @@
+lastAngle = image_angle;
