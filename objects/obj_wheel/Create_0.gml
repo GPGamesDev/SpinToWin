@@ -1,6 +1,7 @@
-myFlipper = instance_create_depth(x+115,y-115,depth-1,obj_flipper);
+myFlipper = instance_create_depth(x+lengthdir_x(166,33.75),y+lengthdir_y(166,33.75),depth-1,obj_flipper);
 
 myFlipper.startingAngle = point_direction(myFlipper.x,myFlipper.y,x,y);
+//myFlipper.image_angle = myFlipper.startingAngle;
 
 pegRadius = 120;
 pegCount = 16;
@@ -8,7 +9,7 @@ pegAngleDelta = 360/pegCount;
 pegArray = [noone];
 
 for(var i=0; i<pegCount; i++){
-	pegArray[i]=instance_create_depth(x+lengthdir_x(pegRadius,i*pegAngleDelta+pegAngleDelta/2),y+lengthdir_y(pegRadius,i*pegAngleDelta+pegAngleDelta/2),depth-1,obj_peg);
+	pegArray[i]=instance_create_depth(x+lengthdir_x(pegRadius,i*pegAngleDelta),y+lengthdir_y(pegRadius,i*pegAngleDelta),depth-1,obj_peg);
 }
 
 rotSpeed = 0;
@@ -51,17 +52,32 @@ for(var i=displayCount; i<tileCount; i++){
 	var _currentTile = (i+tileIndex)%tileCount;
 	instance_deactivate_object(tileArray[_currentTile]);
 }
+
+for(var i=0; i<4; i++){
+	var _angle = -1.5*displayAngleDelta+i*displayAngleDelta;
+	var _setX = x+lengthdir_x(tileRadius,_angle);
+	var _setY = y+lengthdir_y(tileRadius,_angle);
+	with instance_create_depth(_setX, _setY, depth,obj_tileSplit){
+		image_angle = point_direction(x,y,other.x,other.y);
+		position = i;
+	}
+		
+}
 enum WHEEL_STATE{
 	PRESPIN,
 	SPINNING,
 	SPRINGBACK,
 	WAITING,
+	SCROLL_WAIT,
+	SCROLL_SPIN
 }
 
-currentState = WHEEL_STATE.PRESPIN;
+currentState = WHEEL_STATE.SCROLL_WAIT;
 
 springBackCount = 0;
 springBackTime = 30;
 springBackAngle = 0;
 
 selectedTile = noone;
+
+scrollCount = 0;

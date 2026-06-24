@@ -2,6 +2,9 @@ enum TILE_STATE{
 	BACKGROUND,
 	SELECTABLE,
 	SELECTED,
+	DRAGGABLE,
+	DRAGGING,
+	TWITCHING
 }
 
 currentState = TILE_STATE.BACKGROUND;
@@ -16,3 +19,16 @@ damage = 0;
 myToolTip = instance_create_layer(x,y,"Tool_Tips",obj_toolTip,{toolTipText : tileName});
 
 instance_deactivate_object(myToolTip);
+
+mouseOffsetX = 0;
+mouseOffsetY = 0;
+
+stableX = x;
+stableY = y;
+
+spawnLocationX = x;
+spawnLocationY = y;
+
+firstTileIndex = 0;
+
+twitchingTiles = [noone, noone];

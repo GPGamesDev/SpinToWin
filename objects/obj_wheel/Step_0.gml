@@ -84,19 +84,21 @@ switch(currentState){
 			pegArray[i].y=y+lengthdir_y(pegRadius,i*pegAngleDelta+image_angle);
 		}
 		
-		for(var i=0; i<displayCount; i++){
-			var _tileAngle = tileStartAngle+i*displayAngleDelta+wheelOffset;
+		event_user(0)
+	break;
 	
-			var _currentTile = (i+tileIndex)%tileCount;
-			instance_activate_object(tileArray[_currentTile]);
-			tileArray[_currentTile].x = x+lengthdir_x(tileRadius,_tileAngle);
-			tileArray[_currentTile].y = y+lengthdir_y(tileRadius,_tileAngle);
-			tileArray[_currentTile].image_angle = point_direction(tileArray[_currentTile].x,tileArray[_currentTile].y,x,y);
+	case WHEEL_STATE.SCROLL_WAIT:
+		if(scrollCount != 0){
+			currentState = WHEEL_STATE.SCROLL_SPIN;
 		}
+	break;
+	
+	case WHEEL_STATE.SCROLL_SPIN:
+		tileIndex = tileIndex - sign(scrollCount);
+		tileIndex = (tileIndex+tileCount)%tileCount;
+		scrollCount = scrollCount - sign(scrollCount);
 
-		for(var i=displayCount; i<tileCount; i++){
-			var _currentTile = (i+tileIndex)%tileCount;
-			instance_deactivate_object(tileArray[_currentTile]);
-		}
+		event_user(0);
+		if(scrollCount == 0) currentState = WHEEL_STATE.SCROLL_WAIT;
 	break;
 }

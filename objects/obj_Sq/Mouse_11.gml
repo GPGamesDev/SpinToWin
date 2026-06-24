@@ -1,2 +1,1 @@
 instance_deactivate_object(myToolTip);
-instance_deactivate_object(myToolTip);

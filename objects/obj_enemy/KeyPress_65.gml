@@ -1,0 +1,1 @@
+currentState = ENEMY_STATE.ATTACKING;
