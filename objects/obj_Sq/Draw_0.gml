@@ -18,4 +18,4 @@ switch (currentState){
 
 draw_self();
 shader_reset();
-draw_text(x,y,string(myNumber));
+//draw_text(x,y,string(myNumber));

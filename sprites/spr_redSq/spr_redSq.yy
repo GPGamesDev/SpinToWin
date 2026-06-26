@@ -19,11 +19,12 @@
   "height":70,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"f8943377-7ca0-4919-8fa7-d33ece85ec3a","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f8943377-7ca0-4919-8fa7-d33ece85ec3a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"3ece91a9-1ab6-424f-b5c9-1740be1f0fb2","blendMode":0,"displayName":"default","isLocked":false,"name":"3ece91a9-1ab6-424f-b5c9-1740be1f0fb2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_redSq",
   "nineSlice":null,
-  "origin":4,
+  "origin":3,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -75,7 +76,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":35,
+    "xorigin":0,
     "yorigin":35,
   },
   "swatchColours":null,

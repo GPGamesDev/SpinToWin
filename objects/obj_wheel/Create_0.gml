@@ -1,16 +1,5 @@
-myFlipper = instance_create_depth(x+lengthdir_x(166,33.75),y+lengthdir_y(166,33.75),depth-1,obj_flipper);
-
-myFlipper.startingAngle = point_direction(myFlipper.x,myFlipper.y,x,y);
-//myFlipper.image_angle = myFlipper.startingAngle;
-
-pegRadius = 120;
-pegCount = 16;
-pegAngleDelta = 360/pegCount;
-pegArray = [noone];
-
-for(var i=0; i<pegCount; i++){
-	pegArray[i]=instance_create_depth(x+lengthdir_x(pegRadius,i*pegAngleDelta),y+lengthdir_y(pegRadius,i*pegAngleDelta),depth-1,obj_peg);
-}
+//flipperSetUp();
+//pegSetUp();
 
 rotSpeed = 0;
 drag = .01;
@@ -18,15 +7,17 @@ charge = 0;
 chargeRate = 1;
 maxRotSpeed = 5;
 
-tileRadius = 250;
-tileCount = 50;
-tileChoose = [obj_redSq, obj_blueSq, obj_greenSq];
+tileRadius = sprite_width/2+5;
 tileIndex = 0;
 tileHandSize = 5;
 
 tileStartAngle = 270;//292.5;
 tileEndAngle = 90;
+var R = obj_redSq;
+var B = obj_blueSq;
+tileChoose = [R,B,R,R,R,B,R,B,B,B];
 tileArray = [noone];
+tileCount = array_length(tileChoose);
 displayAngleDelta = 22.5;
 displayCount = 9;
 
@@ -34,24 +25,12 @@ wheelOffset = 0;
 lastAngle = image_angle;
 
 for(var i=0; i<tileCount; i++){
-	tileArray[i] =  instance_create_depth(x,y,depth-1,tileChoose[i%array_length(tileChoose)]);
+	tileArray[i] =  instance_create_layer(x,y,"Buttons",tileChoose[i]);
 	tileArray[i].myNumber = i;
 }
 
-for(var i=0; i<displayCount; i++){
-	var _tileAngle = tileStartAngle+i*displayAngleDelta+wheelOffset;
-	
-	var _currentTile = (i+tileIndex)%tileCount;
-	instance_activate_object(tileArray[_currentTile]);
-	tileArray[_currentTile].x = x+lengthdir_x(tileRadius,_tileAngle);
-	tileArray[_currentTile].y = y+lengthdir_y(tileRadius,_tileAngle);
-	tileArray[_currentTile].image_angle = point_direction(tileArray[_currentTile].x,tileArray[_currentTile].y,x,y);
-}
+event_user(0); //tile display
 
-for(var i=displayCount; i<tileCount; i++){
-	var _currentTile = (i+tileIndex)%tileCount;
-	instance_deactivate_object(tileArray[_currentTile]);
-}
 
 for(var i=0; i<4; i++){
 	var _angle = -1.5*displayAngleDelta+i*displayAngleDelta;
@@ -69,15 +48,20 @@ enum WHEEL_STATE{
 	SPRINGBACK,
 	WAITING,
 	SCROLL_WAIT,
-	SCROLL_SPIN
+	SCROLL_SPIN,
+	ENEMY_TURN
 }
 
-currentState = WHEEL_STATE.SCROLL_WAIT;
+currentState = WHEEL_STATE.PRESPIN;
 
 springBackCount = 0;
-springBackTime = 30;
+springBackTime = 15;
 springBackAngle = 0;
 
 selectedTile = noone;
 
 scrollCount = 0;
+
+instance_create_layer(room_width-32,128,"Buttons",obj_endTurnButton);
+
+initialAngle = 0;

@@ -7,7 +7,7 @@
   "managed":true,
   "name":"obj_blueSq",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Sq","path":"objects/obj_Sq/obj_Sq.yy",},"propertyId":{"name":"tileName","path":"objects/obj_Sq/obj_Sq.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Blue Tile\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Sq","path":"objects/obj_Sq/obj_Sq.yy",},"propertyId":{"name":"tileName","path":"objects/obj_Sq/obj_Sq.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Mushroom \\n Heal: \"",},
   ],
   "parent":{
     "name":"Objects",

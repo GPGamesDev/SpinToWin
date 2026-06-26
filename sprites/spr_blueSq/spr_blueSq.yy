@@ -1,7 +1,7 @@
 {
   "$GMSprite":"v2",
   "%Name":"spr_blueSq",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":66,
   "bbox_left":3,
   "bbox_right":66,
@@ -19,11 +19,13 @@
   "height":70,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"521d5606-37e9-4fca-9f56-15e5a12542f4","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"521d5606-37e9-4fca-9f56-15e5a12542f4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
+    {"$GMImageLayer":"","%Name":"d8843c4d-2246-4bd3-9467-8c61e8c5f66f","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"d8843c4d-2246-4bd3-9467-8c61e8c5f66f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"3ece91a9-1ab6-424f-b5c9-1740be1f0fb2","blendMode":0,"displayName":"default","isLocked":false,"name":"3ece91a9-1ab6-424f-b5c9-1740be1f0fb2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_blueSq",
   "nineSlice":null,
-  "origin":4,
+  "origin":3,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -75,7 +77,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":35,
+    "xorigin":0,
     "yorigin":35,
   },
   "swatchColours":null,

@@ -1,4 +1,4 @@
-maxHP = 10;
+maxHP = 4;
 currentHP = maxHP;
 
 spawnX = x;
@@ -16,3 +16,4 @@ attackPos = attackStart;
 attackStep = .01;
 attackDist = 50;
 attackCloseEnough = 2;
+

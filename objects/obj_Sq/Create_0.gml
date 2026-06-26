@@ -32,3 +32,5 @@ spawnLocationY = y;
 firstTileIndex = 0;
 
 twitchingTiles = [noone, noone];
+
+multiplier = 1;

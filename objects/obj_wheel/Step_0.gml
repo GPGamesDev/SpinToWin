@@ -27,12 +27,12 @@ switch(currentState){
 			rotSpeed = -(.2+.01*abs(myFlipper.springAngle));
 		}
 		*/	
-
+		/*
 		for(var i=0; i<pegCount; i++){
 			pegArray[i].x=x+lengthdir_x(pegRadius,i*pegAngleDelta+image_angle);
 			pegArray[i].y=y+lengthdir_y(pegRadius,i*pegAngleDelta+image_angle);
 		}
-
+		*/
 		wheelOffset -= lastAngle-image_angle;
 
 		if(abs(wheelOffset)>displayAngleDelta/2){
@@ -40,21 +40,9 @@ switch(currentState){
 			tileIndex = abs(tileIndex)%tileCount;
 			wheelOffset += displayAngleDelta;
 		}
+		
+		event_user(0);
 
-		for(var i=0; i<displayCount; i++){
-			var _tileAngle = tileStartAngle+i*displayAngleDelta+wheelOffset;
-	
-			var _currentTile = (i+tileIndex)%tileCount;
-			instance_activate_object(tileArray[_currentTile]);
-			tileArray[_currentTile].x = x+lengthdir_x(tileRadius,_tileAngle);
-			tileArray[_currentTile].y = y+lengthdir_y(tileRadius,_tileAngle);
-			tileArray[_currentTile].image_angle = point_direction(tileArray[_currentTile].x,tileArray[_currentTile].y,x,y);
-		}
-
-		for(var i=displayCount; i<tileCount; i++){
-			var _currentTile = (i+tileIndex)%tileCount;
-			instance_deactivate_object(tileArray[_currentTile]);
-		}
 	break;
 	
 	case WHEEL_STATE.SPRINGBACK:
@@ -75,15 +63,19 @@ switch(currentState){
 			
 			for(var i=(displayCount-tileHandSize)/2;i<(displayCount-tileHandSize)/2+tileHandSize;i++){
 				var _currentTile = (i+tileIndex)%tileCount;
-				tileArray[_currentTile].currentState = TILE_STATE.SELECTABLE;
+				if(tileArray[_currentTile].object_index == obj_greenSq){
+					tileArray[(_currentTile+1+tileCount)%tileCount].multiplier *=2;
+					tileArray[(_currentTile-1+tileCount)%tileCount].multiplier *=2;
+				}
+				else tileArray[_currentTile].currentState = TILE_STATE.SELECTABLE;
 			}
 		}
-		
+		/*
 		for(var i=0; i<pegCount; i++){
 			pegArray[i].x=x+lengthdir_x(pegRadius,i*pegAngleDelta+image_angle);
 			pegArray[i].y=y+lengthdir_y(pegRadius,i*pegAngleDelta+image_angle);
 		}
-		
+		*/
 		event_user(0)
 	break;
 	
@@ -101,4 +93,11 @@ switch(currentState){
 		event_user(0);
 		if(scrollCount == 0) currentState = WHEEL_STATE.SCROLL_WAIT;
 	break;
+	
+	case WHEEL_STATE.PRESPIN:
+		if(charge == 0) lastAngle = image_angle;
+		else image_angle = initialAngle + charge/25;
+		wheelOffset -= lastAngle-image_angle;
+		
+		event_user(0);
 }

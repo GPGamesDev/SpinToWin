@@ -3,11 +3,14 @@ if(currentState = ENEMY_STATE.ATTACKING){
 	x=spawnX-1/attackPos;
 	if(abs(x-spawnX)>attackDist){
 		attackStep *= -1;
+		obj_pizzaBoy.currentHP -= damage;
+		
 	}
 	if(abs(x-spawnX)<attackCloseEnough && attackStep<0){
 		attackStep *= -1;
 		x=spawnX;
 		currentState = ENEMY_STATE.WAITING;
+		obj_wheel.currentState = WHEEL_STATE.PRESPIN;
 		attackPos = attackStart
 	}
 }

@@ -19,11 +19,12 @@
   "height":70,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"632c0163-da03-4531-952e-d3dd636d3ec2","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"632c0163-da03-4531-952e-d3dd636d3ec2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"3ece91a9-1ab6-424f-b5c9-1740be1f0fb2","blendMode":0,"displayName":"default","isLocked":false,"name":"3ece91a9-1ab6-424f-b5c9-1740be1f0fb2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_greenSq",
   "nineSlice":null,
-  "origin":4,
+  "origin":3,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -75,7 +76,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":35,
+    "xorigin":0,
     "yorigin":35,
   },
   "swatchColours":null,

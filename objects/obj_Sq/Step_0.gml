@@ -22,6 +22,10 @@ if(currentState = TILE_STATE.DRAGGING && !mouse_check_button(mb_left)){
 			tileCount++;
 			tileIndex = (tileIndex+tileCount)%tileCount;
 			event_user(0);
+			currentState = WHEEL_STATE.PRESPIN;
+			var _enemy = obj_dangerNoodle;
+			if(random(1)<.75) _enemy = obj_enemy;
+			instance_create_layer(750,400,"Instances",_enemy);
 		}
 	}
 }

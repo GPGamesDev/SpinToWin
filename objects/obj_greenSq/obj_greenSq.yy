@@ -3,11 +3,12 @@
   "%Name":"obj_greenSq",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_greenSq",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Sq","path":"objects/obj_Sq/obj_Sq.yy",},"propertyId":{"name":"tileName","path":"objects/obj_Sq/obj_Sq.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"The great and powerful GREEN TILE\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Sq","path":"objects/obj_Sq/obj_Sq.yy",},"propertyId":{"name":"tileName","path":"objects/obj_Sq/obj_Sq.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Pineapple \\n Double adjacent topping values\"",},
   ],
   "parent":{
     "name":"Objects",

@@ -23,7 +23,7 @@
   ],
   "name":"spr_tileSplit",
   "nineSlice":null,
-  "origin":4,
+  "origin":5,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":32,
+    "xorigin":64,
     "yorigin":32,
   },
   "swatchColours":null,

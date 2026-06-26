@@ -7,7 +7,7 @@
   "managed":true,
   "name":"obj_redSq",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Sq","path":"objects/obj_Sq/obj_Sq.yy",},"propertyId":{"name":"tileName","path":"objects/obj_Sq/obj_Sq.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Red Attack Tile\"",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_Sq","path":"objects/obj_Sq/obj_Sq.yy",},"propertyId":{"name":"tileName","path":"objects/obj_Sq/obj_Sq.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Pepperoni \\n Damage: \"",},
   ],
   "parent":{
     "name":"Objects",
