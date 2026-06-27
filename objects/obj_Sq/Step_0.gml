@@ -25,7 +25,11 @@ if(currentState = TILE_STATE.DRAGGING && !mouse_check_button(mb_left)){
 			currentState = WHEEL_STATE.PRESPIN;
 			var _enemy = obj_dangerNoodle;
 			if(random(1)<.75) _enemy = obj_enemy;
-			instance_create_layer(750,400,"Instances",_enemy);
+			with(instance_create_layer(750,450,"Instances",_enemy)){
+				maxHP = floor(maxHP*(1+obj_wheel.level/4));
+				currentHP = maxHP;
+				damage = floor(damage*(1+obj_wheel.level/8));
+			}
 		}
 	}
 }

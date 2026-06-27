@@ -18,3 +18,12 @@ function pegSetUp(){
 		pegArray[i]=instance_create_depth(x+lengthdir_x(pegRadius,i*pegAngleDelta),y+lengthdir_y(pegRadius,i*pegAngleDelta),depth-1,obj_peg);
 	}
 }
+
+function trackerPegUpdate(){
+	trackerPegAngle = 270-(tileIndex/tileCount)*180+(wheelOffset/displayAngleDelta)*(1/tileCount)*180;
+	trackerPeg.x = x + lengthdir_x(trackerPegRadius,trackerPegAngle);
+	trackerPeg.y = y + lengthdir_y(trackerPegRadius,trackerPegAngle);
+	
+	trackerPegMirror.x = x + lengthdir_x(trackerPegRadius,trackerPegAngle+180);
+	trackerPegMirror.y = y + lengthdir_y(trackerPegRadius,trackerPegAngle+180);
+}

@@ -1,1 +1,1 @@
-currentState = ENEMY_STATE.ATTACKING;
+//currentState = ENEMY_STATE.ATTACKING;

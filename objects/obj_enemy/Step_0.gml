@@ -14,3 +14,5 @@ if(currentState = ENEMY_STATE.ATTACKING){
 		attackPos = attackStart
 	}
 }
+
+if(position_meeting(mouse_x,mouse_y,self)) myToolTip.toolTipText = enemyName + "\n HP: " + string(currentHP) + "/" + string(maxHP) + "\n Damage: " + string(damage);

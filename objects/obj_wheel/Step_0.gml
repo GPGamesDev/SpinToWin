@@ -36,6 +36,14 @@ switch(currentState){
 		wheelOffset -= lastAngle-image_angle;
 
 		if(abs(wheelOffset)>displayAngleDelta/2){
+			if(completeRotation){
+				perfectRotation = false;
+			}
+			
+			if(tileIndex == lastIndex){ 
+				completeRotation = true;
+				perfectRotation = true;
+			}
 			tileIndex++;
 			tileIndex = abs(tileIndex)%tileCount;
 			wheelOffset += displayAngleDelta;
@@ -52,6 +60,14 @@ switch(currentState){
 
 		
 		if(abs(wheelOffset)>displayAngleDelta/2){
+			if(completeRotation){
+				perfectRotation = false;
+			}
+			
+			if(tileIndex == lastIndex){ 
+				completeRotation = true;
+				perfectRotation = true;
+			}
 			tileIndex++;
 			tileIndex = abs(tileIndex)%tileCount;
 			wheelOffset += displayAngleDelta;
@@ -59,6 +75,9 @@ switch(currentState){
 		
 		if(springBackCount>=springBackTime){
 			currentState = WHEEL_STATE.WAITING;
+			if(!completeRotation) obj_Sq.multiplier = 0;
+			if(perfectRotation) obj_Sq.multiplier *=2;
+			
 			springBackCount=0;
 			
 			for(var i=(displayCount-tileHandSize)/2;i<(displayCount-tileHandSize)/2+tileHandSize;i++){
@@ -101,3 +120,5 @@ switch(currentState){
 		
 		event_user(0);
 }
+
+trackerPegUpdate();

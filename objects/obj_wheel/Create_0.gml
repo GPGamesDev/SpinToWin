@@ -11,7 +11,7 @@ tileRadius = sprite_width/2+5;
 tileIndex = 0;
 tileHandSize = 5;
 
-tileStartAngle = 270;//292.5;
+tileStartAngle = 270;
 tileEndAngle = 90;
 var R = obj_redSq;
 var B = obj_blueSq;
@@ -62,6 +62,19 @@ selectedTile = noone;
 
 scrollCount = 0;
 
-instance_create_layer(room_width-32,128,"Buttons",obj_endTurnButton);
+instance_create_layer(room_width,0,"GUI",obj_endTurnButton);
 
 initialAngle = 0;
+
+level = 1;
+
+lastIndex = tileIndex;
+completeRotation = false;
+perfectRotation = false;
+
+trackerPeg = instance_create_layer(x,y,"Buttons",obj_trackerPeg);
+trackerPegMirror = instance_create_layer(x,y,"Buttons",obj_trackerPeg);
+trackerPegRadius = sprite_width/2-10;
+trackerPegAngle = 0;
+wheelOffsetBegin = 0;
+trackerPegUpdate();

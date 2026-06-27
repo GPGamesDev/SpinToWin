@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"Object13",
-  "eventList":[],
+  "%Name":"obj_soundController",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"Object13",
+  "name":"obj_soundController",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",

@@ -1,6 +1,6 @@
 if(obj_wheel.selectedTile == noone) exit;
 
-currentHP -= min(maxHP, obj_wheel.selectedTile.damage);
+currentHP -= min(maxHP, obj_wheel.selectedTile.damage*obj_wheel.selectedTile.multiplier);
 obj_wheel.selectedTile.currentState = TILE_STATE.BACKGROUND;
 obj_wheel.selectedTile = noone;
 

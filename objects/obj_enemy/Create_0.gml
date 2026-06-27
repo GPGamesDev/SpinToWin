@@ -1,4 +1,4 @@
-maxHP = 4;
+maxHP = 5;
 currentHP = maxHP;
 
 spawnX = x;
@@ -17,3 +17,5 @@ attackStep = .01;
 attackDist = 50;
 attackCloseEnough = 2;
 
+myToolTip = instance_create_layer(x,y,"Tool_Tips",obj_toolTip,{toolTipText : enemyName});
+instance_deactivate_object(myToolTip);
